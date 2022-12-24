@@ -1,0 +1,33 @@
+body {
+    background: #fff;
+}
+
+h2 {
+    color: #222222;
+}
+
+.page-title {
+    color: #222222;
+}
+
+.card {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card .title {
+    color: #222222;
+}
+
+.card .text {
+    color: #222222;
+}
+
+.theme {
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    background: #ffffff;
+    /* box-shadow: 0 0 10px rgba(39, 38, 40, 0.4); */
+}
