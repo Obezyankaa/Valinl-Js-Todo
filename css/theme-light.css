@@ -31,3 +31,18 @@ h2 {
     background: #ffffff;
     /* box-shadow: 0 0 10px rgba(39, 38, 40, 0.4); */
 }
+@media screen and (max-width: 500px) {
+    .theme {
+        right: 5px;
+        top: 5px;
+    }
+
+    svg {
+        width: 25px;
+        height: 25px;
+        }
+
+    .container {
+        margin-bottom: 20px;
+    }
+}

@@ -26,7 +26,21 @@ h2 {
 .theme {
     cursor: pointer;
     position: absolute;
-        right: 2rem;
-        top: 2rem;
+    right: 2rem;
+    top: 2rem;
     background: rgb(20, 20, 20);    /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); */
+}
+
+@media screen and (max-width: 500px) {
+    .theme {
+        right: 5px;
+        top: 5px;
+    }
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+    .container {
+        margin-bottom: 20px;
+    }
 }
