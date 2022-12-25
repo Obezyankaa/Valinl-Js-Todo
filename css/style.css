@@ -50,3 +50,10 @@ body {
     color: #222222;
 }
 
+.counter-block {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: tomato;
+}
+

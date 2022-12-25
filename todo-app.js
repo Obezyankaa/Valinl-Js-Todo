@@ -31,7 +31,7 @@
 (function () {
 
     let listArray = [];
-        listName = '';
+    listName = '';
 
     // создаём и возвращаем заголовок приложения
     function createAppTitle(title){
@@ -49,7 +49,7 @@
 
         form.classList.add('input-group', 'mb-3')
         input.classList.add('form-control')
-        input.placeholder = 'Введите название нового дела'
+        input.placeholder = 'Введите название дела'
         buttonWrapper.classList.add('input-group-append')
         button.classList.add('btn', 'btn-primary')
         button.textContent = 'Добавить дело'
@@ -94,7 +94,6 @@
         // в его правой части с помощью flex
       item.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', 'mb-1')
         item.textContent = obj.name;
-
 
         buttonGroup.classList.add('btn-group', 'btn-group-sm')
         doneButton.classList.add('btn', 'btn-success')
@@ -145,13 +144,12 @@
         let todoAppTitle = createAppTitle(title)
         let todoItemForm = createTodoItemForm()
         let todoList = createTodoList()
-
         listName = keyName;
         listArray = defArray;
 
-         container.append(todoAppTitle)
-         container.append(todoItemForm.form)
-         container.append(todoList)
+        container.append(todoAppTitle)
+        container.append(todoItemForm.form)
+        container.append(todoList)
 
         let localData = localStorage.getItem(listName);
 
@@ -166,30 +164,23 @@
         todoItemForm.form.addEventListener('submit', function(e){
             // чтобы страница не перезагружалась
             e.preventDefault();
-
             if(!todoItemForm.input.value){
                  return 
             }
-            
             let newtItem = {
                 id: Date.now(),
                 name: todoItemForm.input.value,
                 done: false
             }
-            
             let todoItem = createTodoItem(newtItem)
-            
             listArray.push(newtItem);
-            
             saveList(listArray, listName)
             // создаем и добавляем новое дело с названием из поля для ввода
             todoList.append(todoItem.item)
-            
             // выставляем кнопке disabled
             todoItemForm.button.disabled = true
             // обнуляем значение в поле, чтобы не пришлось стирать его из поля для ввода
-            todoItemForm.input.value = ''
-            
+            todoItemForm.input.value = ''            
         }) 
     }
     window.createTodoApp = createTodoApp
