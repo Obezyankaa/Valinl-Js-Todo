@@ -83,7 +83,7 @@
         return list;
     }
 
-    function createTodoItem(obj){
+    function createTodoItem(obj) {
         let item = document.createElement('li');
         // кнопки помещаем в элемент, который красиво покажет их в одной группе
         let buttonGroup = document.createElement('div')
@@ -112,9 +112,8 @@
              saveList(listArray,listName)
         })
         deleteButton.addEventListener('click', function(){
-            if(confirm('Вы уверены?')){
+            if (confirm('Вы уверены?')) {
                 item.remove()
-            //   localStorage.removeItem(key)
 
             for (let i = 0; i < listArray.length; i += 1) {
                 if (listArray[i].id == obj.id) listArray.splice(i, 1)
@@ -140,25 +139,43 @@
         localStorage.setItem(keyName, JSON.stringify(arr));
     }
 
-    function createTodoApp(container, title, keyName, defArray = []){
+    function TastDelete() {
+        let taskButton = document.createElement('button')
+         taskButton.classList.add('btn', 'btn-success')
+        taskButton.textContent = 'Завершить все'
+
+        return taskButton
+    }
+
+   
+
+    function createTodoApp(container, title, keyName, defArray = []) {
         let todoAppTitle = createAppTitle(title)
         let todoItemForm = createTodoItemForm()
         let todoList = createTodoList()
+        let taskDelete = TastDelete()
         listName = keyName;
         listArray = defArray;
 
         container.append(todoAppTitle)
         container.append(todoItemForm.form)
         container.append(todoList)
+        container.append(taskDelete)
 
         let localData = localStorage.getItem(listName);
-
         if (localData !== null && localData !== '') listArray = JSON.parse(localData);
 
         for (const itemList of listArray) {
             let todoItem = createTodoItem(itemList)
             todoList.append(todoItem.item);
         }
+
+        taskDelete.addEventListener('click', function () {
+            if (confirm('Вы уверены?')) {
+                window.localStorage.removeItem(listName)
+                location.reload()
+            }  
+        })
 
       
         todoItemForm.form.addEventListener('submit', function(e){
@@ -183,5 +200,6 @@
             todoItemForm.input.value = ''            
         }) 
     }
+    // window.localStorage.removeItem('my-list')
     window.createTodoApp = createTodoApp
 })();
