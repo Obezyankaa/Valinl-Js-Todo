@@ -26,8 +26,6 @@
     }
 })();
 
-
-
 (function () {
 
     let listArray = [];
@@ -68,6 +66,7 @@
                 button.disabled = true
             }
              });
+             
 
         return{
             form,
@@ -141,8 +140,9 @@
 
     function TastDelete() {
         let taskButton = document.createElement('button')
-         taskButton.classList.add('btn', 'btn-success')
-        taskButton.textContent = 'Завершить все'
+            taskButton.classList.add('btn', 'btn-success', 'test')
+            taskButton.textContent = 'Завершить все'
+            // taskButton.disabled = true
 
         return taskButton
     }
@@ -191,7 +191,17 @@
             }
             let todoItem = createTodoItem(newtItem)
             listArray.push(newtItem);
+            
             saveList(listArray, listName)
+
+            for (let i = 0; i < listArray.length; i++) {
+                if (listArray.length > 3) {
+                    console.log('больше');
+                    // let taskButton = document.createElement('button')
+                    taskDelete.classList.add('test2');
+                }
+            }
+            
             // создаем и добавляем новое дело с названием из поля для ввода
             todoList.append(todoItem.item)
             // выставляем кнопке disabled
