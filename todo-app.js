@@ -244,3 +244,5 @@
     // window.localStorage.removeItem('my-list')
     window.createTodoApp = createTodoApp
 })();
+
+console.log('version: 1,2');
