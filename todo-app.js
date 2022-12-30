@@ -240,7 +240,7 @@
         }
     }
     notiset()
-    notifyMe()
+    // notifyMe()
     // window.localStorage.removeItem('my-list')
     window.createTodoApp = createTodoApp
 })();
