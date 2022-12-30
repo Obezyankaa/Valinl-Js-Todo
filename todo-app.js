@@ -221,9 +221,10 @@ function notifyMe () {
 		var notification = new Notification ("Все еще работаешь?", {
 			tag : "ache-mail",
 			body : "Пора сделать паузу и отдохнуть",
-			icon : '/img/icons.png'
-		});
+        });
+        console.log(notification);
 }
+    
     
     let testBtn = document.getElementById('testBTN');
     testBtn.addEventListener('click', function (e) { 
