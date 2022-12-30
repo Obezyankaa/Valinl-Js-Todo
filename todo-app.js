@@ -245,4 +245,4 @@
     window.createTodoApp = createTodoApp
 })();
 
-console.log('version: 1.3');
+console.log('version: 1.4');
