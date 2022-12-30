@@ -177,6 +177,12 @@
             }  
         })
 
+        function counter(arr) {
+            console.log("arr-->>", arr);
+            let divCounter = document.createElement('div');
+
+        }
+
       
         todoItemForm.form.addEventListener('submit', function(e){
             // чтобы страница не перезагружалась
@@ -193,13 +199,13 @@
             listArray.push(newtItem);
             
             saveList(listArray, listName)
-
-            for (let i = 0; i < listArray.length; i++) {
+            counter(listArray)
+            for (let i = 0; i < listArray.length; i++) {                
                 if (listArray.length > 3) {
                     console.log('больше');
                     // let taskButton = document.createElement('button')
                     taskDelete.classList.add('test2');
-                }
+                } 
             }
             
             // создаем и добавляем новое дело с названием из поля для ввода
