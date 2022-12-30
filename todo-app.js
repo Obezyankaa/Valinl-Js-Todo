@@ -177,12 +177,6 @@
             }  
         })
 
-        function counter(arr) {
-            console.log("arr-->>", arr);
-            let divCounter = document.createElement('div');
-
-        }
-
       
         todoItemForm.form.addEventListener('submit', function(e){
             // чтобы страница не перезагружалась
@@ -217,12 +211,23 @@
         }) 
     }
 
-function notifyMe () {
+    function notifyMe() {
 		var notification = new Notification ("Все еще работаешь?", {
 			tag : "ache-mail",
 			body : "Пора сделать паузу и отдохнуть",
         });
-        console.log(notification);
+    console.log(notification);
+    let div = document.createElement('div');
+    let div1 = document.createElement('div');
+    // let div2 = document.createElement('div');
+
+    div.textContent = notification.body;
+    div1.textContent = notification.title;
+
+    document.body.append(div);
+    document.body.append(div1);
+
+
 }
     
     
@@ -251,4 +256,4 @@ function notifyMe () {
     window.createTodoApp = createTodoApp
 })();
 
-console.log('version: 1.6');
+console.log('version: 1.8');
