@@ -211,49 +211,50 @@
         }) 
     }
 
-    function notifyMe() {
-		var notification = new Notification ("Все еще работаешь?", {
-			tag : "ache-mail",
-			body : "Пора сделать паузу и отдохнуть",
-        });
-    console.log(notification);
-    let div = document.createElement('div');
-    let div1 = document.createElement('div');
-    // let div2 = document.createElement('div');
+//     function notifyMe() {
+// 		var notification = new Notification ("Все еще работаешь?", {
+// 			tag : "ache-mail",
+//             body: "Пора сделать паузу и отдохнуть",
+//         });
+//     console.log(notification);
+//     let div = document.createElement('div');
+//     let div1 = document.createElement('div');
+//     let div2 = document.createElement('div');
+//     div2.classList.add('blockNotifications')    
 
-    div.textContent = notification.body;
-    div1.textContent = notification.title;
+//     div.textContent = notification.body;
+//     div1.textContent = notification.title;
 
-    document.body.append(div);
-    document.body.append(div1);
-
-
-}
-    
-    
-    let testBtn = document.getElementById('testBTN');
-    testBtn.addEventListener('click', function (e) { 
-        e.preventDefault()
-       notifSet()
-    });
+//         div2.append(div, div1)
+//         document.body.append(div2);
+// }
+//     let testBtn = document.getElementById('testBTN');
+//     testBtn.addEventListener('click', function (e) { 
+//         e.preventDefault()
+//        notifSet()
+//     });
 
 	
-	function notifSet () {
-		if (!("Notification" in window))
-			alert ("Ваш браузер не поддерживает уведомления.");
-		else if (Notification.permission === "granted")
-			setTimeout(notifyMe, 2000);
-		else if (Notification.permission !== "denied") {
-			Notification.requestPermission (function (permission) {
-				if (!('permission' in Notification))
-					Notification.permission = permission;
-				if (permission === "granted")
-					setTimeout(notifyMe, 2000);
-			});
-		}
-	}
+// 	function notifSet () {
+//         if (!("Notification" in window))
+// 			alert ("Ваш браузер не поддерживает уведомления.");
+//         else if (Notification.permission === "granted") {
+//             setTimeout(notifyMe, 2000);
+//             setTimeout(() => {
+//                 div2.style.display = 'none';
+//             },5000)
+//         }
+// 		else if (Notification.permission !== "denied") {
+// 			Notification.requestPermission (function (permission) {
+// 				if (!('permission' in Notification))
+// 					Notification.permission = permission;
+// 				if (permission === "granted")
+//                     setTimeout(notifyMe, 2000);
+// 			});
+// 		}
+// 	}
     // window.localStorage.removeItem('my-list')
     window.createTodoApp = createTodoApp
 })();
 
-console.log('version: 1.8');
+console.log('version: 1.9');
