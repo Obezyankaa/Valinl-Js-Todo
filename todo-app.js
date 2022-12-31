@@ -193,7 +193,7 @@
             listArray.push(newtItem);
             
             saveList(listArray, listName)
-            counter(listArray)
+            // counter(listArray)
             for (let i = 0; i < listArray.length; i++) {                
                 if (listArray.length > 3) {
                     console.log('больше');
@@ -257,4 +257,4 @@
     window.createTodoApp = createTodoApp
 })();
 
-console.log('version: 1.9');
+console.log('version: 2.0');
